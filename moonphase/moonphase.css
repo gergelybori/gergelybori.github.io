@@ -1,7 +1,14 @@
 :root {
     --moonsize: 20vw;
-    --shade-1: white;
-    --shade-2: dimgrey;
+    --phase: 0.75;
+    --disk-width: calc(var(--phase) * var(--moonsize));
+
+    --dark: dimgrey;
+    --light: white;
+
+    --right-hemi: var(--dark);
+    --left-hemi: var(--light);
+    --shade-disk: var(--light);
 }
 
 body {
@@ -30,7 +37,7 @@ body {
 
     border-radius: var(--moonsize) 0 0 var(--moonsize);
 
-    background: var(--shade-2);
+    background: var(--left-hemi);
 }
 
 #right {
@@ -39,7 +46,7 @@ body {
 
     border-radius: 0 var(--moonsize) var(--moonsize) 0;
 
-    background: var(--shade-1);
+    background: var(--right-hemi);
 }
 
 #moonshade {
@@ -52,7 +59,7 @@ body {
     height: 100vh;
     margin: 0;
 
-    background: radial-gradient(calc(0.75 * var(--moonsize)) var(--moonsize), var(--shade-2) 50%, transparent 50%);
+    background: radial-gradient(var(--disk-width) var(--moonsize), var(--shade-disk) 50%, transparent 50%);
 }
 
 
@@ -64,4 +71,15 @@ img {
     margin:auto;
     left: calc(50vw - calc(var(--moonsize) / 2));
     opacity: .2;
+
+    transform: rotate(calc(10deg * var(--phase)));
+}
+
+input {
+    position: absolute;
+
+    width: calc(2 * var(--moonsize));
+    
+    top: 80vh;
+    left: calc(50vw - var(--moonsize));
 }
