@@ -47,6 +47,7 @@ let moon = {
     
 }
 
+
 phaseInput.addEventListener('change', function() {
     changePhase(this.value);
 })
@@ -70,3 +71,6 @@ function changePhase(phase) {
     root.style.setProperty('--shade-disk', moon.shadeDisk);
     root.style.setProperty('--disk-width', moon.diskWidth + 'vw');
 }
+
+phaseInput.value = moon.phase;
+changePhase(moon.phase);
