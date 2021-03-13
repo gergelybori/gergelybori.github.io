@@ -1,6 +1,6 @@
 :root {
     --moonsize: 20vw;
-    --phase: -0.25;
+    --phase: 0;
     --disk-width: calc(var(--phase) * var(--moonsize));
 
     --dark: dimgrey;
