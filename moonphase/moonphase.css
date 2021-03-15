@@ -29,6 +29,8 @@ body {
     height: var(--moonsize);
     border-radius: var(--moonsize);
     margin: auto;
+
+    background: linear-gradient(90deg, var(--left-hemi) 49%, var(--right-hemi) 51%);
 }
 
 #left {
@@ -59,7 +61,7 @@ body {
     height: 100vh;
     margin: 0;
 
-    background: radial-gradient(var(--disk-width) var(--moonsize), var(--shade-disk) 50%, transparent 50%);
+    background: radial-gradient(var(--disk-width) var(--moonsize), var(--shade-disk) 50%, transparent 50%),  radial-gradient(calc(var(--disk-width) + 1vw) var(--moonsize), var(--shade-disk) 49%, transparent 51%);
 }
 
 
